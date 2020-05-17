@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GameDirector } from '@services/GameDirector';
 import { GameMoveProps, GameMove, Board } from '..';
 import { Move } from '@customTypes/Move';
+import { GameInfo } from '@components/GameInfo';
 
 export interface BoardSquares {
   squares: Move;
@@ -63,17 +64,14 @@ export const Game: React.FC = () => {
   const winner = GameDirector.calculateWinner(currentMove.squares);
   const moves = history.map((move, step) => {
     const props: GameMoveProps = { step: step, onClick: step => jumpTo(step) };
-    return GameMove(props);
+    return <GameMove {...props} key={step} />;
   });
   const status = winner ? 'Winner is: ' + winner : 'Next player: ' + (state.xIsNext ? 'X' : 'O');
 
   return (
     <div className="game">
       <Board squares={currentMove.squares} onClick={(i: number) => handleClick(i)} />
-      <div className="game-info">
-        <div>{status}</div>
-        <ol>{moves}</ol>
-      </div>
+      <GameInfo {...{ status, moves }} />
     </div>
   );
 };
