@@ -7,7 +7,7 @@ import { GameInfo } from '@components/GameInfo';
 export const Game: React.FC = () => {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
-  const [history, setHistory] = useState<Move[]>([Array(9).fill(null)]);
+  const [history, setHistory] = useState<Move[]>([Array(9).fill('')]);
 
   const jumpTo = (step: number): void => {
     setStepNumber(step);
