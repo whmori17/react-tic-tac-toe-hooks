@@ -12,7 +12,7 @@
     "build": "rm -rf dist/ && webpack && cp -R public dist/public",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 9010",
     "build-storybook": "build-storybook",
     "format": "prettier --config ./.prettierrc.js --write \"./src/**/**.ts\" \"./src/**/**/*.tsx\"",
     "format:check": "prettier --check \"./src/**/**/*.ts\" \"./src/**/**/*.tsx\""

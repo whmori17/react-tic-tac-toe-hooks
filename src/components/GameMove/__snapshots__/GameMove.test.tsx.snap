@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameMove renders 1`] = `
+<li
+  key="1"
+>
+  <button
+    onClick={[Function]}
+  >
+    Go to move #1
+  </button>
+</li>
+`;
+
+exports[`GameMove renders with game start desc 1`] = `
+<li
+  key="0"
+>
+  <button
+    onClick={[Function]}
+  >
+    Go to game start
+  </button>
+</li>
+`;
+
+exports[`GameMove renders with step desc 1`] = `
+<li
+  key="1"
+>
+  <button
+    onClick={[Function]}
+  >
+    Go to move #1
+  </button>
+</li>
+`;
