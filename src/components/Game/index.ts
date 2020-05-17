@@ -1,1 +1,1 @@
-export { Game, BoardSquares, GameState } from './Game';
+export { Game } from './Game';
