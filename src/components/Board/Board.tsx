@@ -13,15 +13,14 @@ export const Board: React.FC<BoardProps> = ({ squares, onClick }) => {
     [3, 4, 5],
     [6, 7, 8],
   ];
-  const renderSquare = (i: number) => {
-    return <Square value={squares[i]} onClick={() => onClick(i)} key={i} />;
-  };
 
   return (
     <div className="game-board">
       {boardRows.map((row, index) => (
         <div className="board-row" key={index}>
-          {row.map(i => renderSquare(i))}
+          {row.map(i => (
+            <Square value={squares[i]} onClick={() => onClick(i)} key={i} />
+          ))}
         </div>
       ))}
     </div>
