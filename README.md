@@ -19,15 +19,15 @@ Launches the test runner with test coverave that you can find in the homonym dir
 
 ### `npm|yarn test:watch`
 
-Launches the test runnerin watch mode.<br>
+Launches the test runner in watch mode.<br>
 
 ### `npm|yarn format:check`
 
-Check code standards with prettier.<br>
+Checks code standards with prettier.<br>
 
 ### `npm|yarn format`
 
-Format the code in base of the specified code standards.<br>
+Formats the code in base of the specified standards.<br>
 
 ### `npm|yarn storybook`
 
