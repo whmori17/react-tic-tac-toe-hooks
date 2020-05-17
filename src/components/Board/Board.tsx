@@ -6,30 +6,20 @@ export interface BoardProps {
   onClick: (i: number) => void;
 }
 
-export class Board extends React.Component<BoardProps> {
-  public renderSquare(i: number) {
-    return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
-  }
+export const Board: React.FC<BoardProps> = ({ squares, onClick }) => {
+  const renderSquare = (i: number) => {
+    return <Square value={squares[i]} onClick={() => onClick(i)} />;
+  };
 
-  public render() {
-    return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
-}
+  const firstRow = [0, 1, 2];
+  const secondRow = [3, 4, 5];
+  const thirdRow = [6, 7, 8];
+
+  return (
+    <div>
+      <div className="board-row">{firstRow.map(i => renderSquare(i))}</div>
+      <div className="board-row">{secondRow.map(i => renderSquare(i))}</div>
+      <div className="board-row">{thirdRow.map(i => renderSquare(i))}</div>
+    </div>
+  );
+};
