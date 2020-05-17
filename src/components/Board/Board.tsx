@@ -8,13 +8,12 @@ export interface BoardProps {
 }
 
 export const Board: React.FC<BoardProps> = ({ squares, onClick }) => {
-  const renderSquare = (i: number) => {
-    return <Square value={squares[i]} onClick={() => onClick(i)} key={i} />;
-  };
-
   const firstRow = [0, 1, 2];
   const secondRow = [3, 4, 5];
   const thirdRow = [6, 7, 8];
+  const renderSquare = (i: number) => {
+    return <Square value={squares[i]} onClick={() => onClick(i)} key={i} />;
+  };
 
   return (
     <div className="game-board">
