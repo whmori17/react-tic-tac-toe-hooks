@@ -2,7 +2,7 @@ import { Move } from '@customTypes/Move';
 
 export class GameDirector {
   public static calculateWinner(squares: Move): string | null {
-    const lines = [
+    const winningCombinations = [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -12,8 +12,8 @@ export class GameDirector {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
+    for (let i = 0; i < winningCombinations.length; i++) {
+      const [a, b, c] = winningCombinations[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a];
       }
