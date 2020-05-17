@@ -1,15 +1,15 @@
 import React from 'react';
 
 export interface SquareProps {
-  onClick: (i: any) => void;
+  onClick: (i: number) => void;
   value: string;
 }
 
 // Function components style
-export function Square(props: SquareProps) {
+export const Square: React.FC<SquareProps> = ({ value, onClick }) => {
   return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
+    <button className={'square'} {...onClick}>
+      {value}
     </button>
   );
-}
+};
