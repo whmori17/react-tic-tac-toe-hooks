@@ -6,6 +6,7 @@ exports[`Board renders 1`] = `
 >
   <div
     className="board-row"
+    key="0"
   >
     <Component
       key="0"
@@ -25,6 +26,7 @@ exports[`Board renders 1`] = `
   </div>
   <div
     className="board-row"
+    key="1"
   >
     <Component
       key="3"
@@ -41,6 +43,7 @@ exports[`Board renders 1`] = `
   </div>
   <div
     className="board-row"
+    key="2"
   >
     <Component
       key="6"
