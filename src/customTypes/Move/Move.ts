@@ -1,1 +1,1 @@
-export type Move = string[];
+export type Move = (null | '' | 'X' | 'O')[];
