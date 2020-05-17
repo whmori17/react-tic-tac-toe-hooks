@@ -1,8 +1,8 @@
 import React from 'react';
 import { GameDirector } from '@services/GameDirector';
 import { GameMoveProps, GameMove, Board } from '..';
+import { Move } from '@customTypes/Move';
 
-export type Move = string[];
 export interface BoardSquares {
   squares: Move;
 }
@@ -28,7 +28,7 @@ export class Game extends React.Component {
     const currentMove = history[history.length - 1];
     const squares = currentMove.squares.slice();
 
-    if (GameDirector(squares) || squares[i]) {
+    if (GameDirector.calculateWinner(squares) || squares[i]) {
       return;
     }
 
@@ -48,7 +48,7 @@ export class Game extends React.Component {
   public render() {
     const history = this.state.history;
     const currentMove = history[this.state.stepNumber];
-    const winner = GameDirector(currentMove.squares);
+    const winner = GameDirector.calculateWinner(currentMove.squares);
     const moves = history.map((move, step) => {
       const props: GameMoveProps = { step: step, onClick: step => this.jumpTo(step) };
       return GameMove(props);

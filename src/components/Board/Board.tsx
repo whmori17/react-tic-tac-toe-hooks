@@ -1,5 +1,6 @@
 import React from 'react';
-import { Move, Square } from '..';
+import { Square } from '..';
+import { Move } from '@customTypes/Move';
 
 export interface BoardProps {
   squares: Move;

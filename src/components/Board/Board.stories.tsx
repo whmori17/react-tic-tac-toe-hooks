@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Board } from '.';
-import { Move } from '@components/Game';
+import { Move } from '@customTypes/Move';
 
 export default {
   title: 'Board',

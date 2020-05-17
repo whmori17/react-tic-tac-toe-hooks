@@ -33,6 +33,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@services/*": ["src/services/*"],
+      "@customTypes/*": ["src/customTypes/*"],
     }
   },
   "include": ["src/**/*"],
