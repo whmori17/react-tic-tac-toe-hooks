@@ -24,12 +24,9 @@ export const Game: React.FC = () => {
   ]);
 
   const jumpTo = (step: number): void => {
-    setState(prevState => {
-      return {
-        ...prevState,
-        stepNumber: step,
-        xIsNext: step % 2 === 0,
-      };
+    setState({
+      stepNumber: step,
+      xIsNext: step % 2 === 0,
     });
   };
 
@@ -47,12 +44,9 @@ export const Game: React.FC = () => {
     setHistory(prevHistory => {
       return [...prevHistory, { squares }];
     });
-    setState(prevState => {
-      return {
-        ...prevState,
-        xIsNext: !state.xIsNext,
-        stepNumber: currentHistory.length,
-      };
+    setState({
+      xIsNext: !state.xIsNext,
+      stepNumber: currentHistory.length,
     });
   };
 
