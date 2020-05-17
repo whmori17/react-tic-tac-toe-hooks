@@ -12,6 +12,7 @@ export const Game: React.FC = () => {
   const jumpTo = (step: number): void => {
     setStepNumber(step);
     setXIsNext(step % 2 === 0);
+    setHistory(prevHistory => prevHistory.filter((move, i) => i <= step));
   };
 
   const handleClick = (i: number): void => {
