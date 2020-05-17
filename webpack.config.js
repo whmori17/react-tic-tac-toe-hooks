@@ -1,43 +1,45 @@
 const path = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    mode: "production",
-    entry: path.resolve(__dirname, 'src') + '/index.tsx',
+  // webpack will take the files from ./src/index
+  entry: './src/index.tsx',
 
-    // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
+  // and output it into /dist as bundle.js
+  output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'bundle.js',
+  },
 
-    resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx"]
+  // adding .ts and .tsx to resolve.extensions will help babel look for .ts and .tsx files to transpile
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components/'),
+      '@services': path.resolve(__dirname, 'src/services/'),
     },
+  },
 
-    module: {
-        rules: [
-            {
-                test: /\.ts(x?)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "ts-loader"
-                    }
-                ]
-            },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
-            }
-        ]
-    },
+  module: {
+    rules: [
+      // we use babel-loader to load our jsx and tsx files
+      {
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
 
-    // When importing a module whose path matches one of the following, just
-    // assume a corresponding global variable exists and use that instead.
-    // This is important because it allows us to avoid bundling all of our
-    // dependencies, which allows browsers to cache those libraries between builds.
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    }
+      // css-loader to bundle all the css files into one file and style-loader to add all the styles  inside the style tag of the document
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
 };

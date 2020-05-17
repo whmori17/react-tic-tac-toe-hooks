@@ -1,0 +1,31 @@
+module.exports = {
+  roots: ['<rootDir>/src'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+  setupFilesAfterEnv: ['./jest.setup.js'],
+  testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx)$',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/**/**/**/*.{ts,tsx}',
+    '!src/**/**/**/**/*.{stories.tsx,d.ts}',
+    '!src/**/**/**/**/index.{ts,tsx}',
+    '!src/**/**/**/**/registerServiceWorker.ts',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+  ],
+  moduleNameMapper: {
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@models(.*)$': '<rootDir>/src/models$1',
+    '^@messages(.*)$': '<rootDir>/src/messages$1',
+    '^@services(.*)$': '<rootDir>/src/services$1',
+    '^@providers(.*)$': '<rootDir>/src/services/providers$1',
+    '^@builders(.*)$': '<rootDir>/src/services/builders$1',
+    '^@factories(.*)$': '<rootDir>/src/services/factories$1',
+    '^@ui-kit(.*)$': '<rootDir>/src/components/ui-kit$1',
+    '^@domain(.*)$': '<rootDir>/src/components/domain$1',
+    '\\.(css|less)$': '<rootDir>/public/css/__mocks__/styleMock.ts',
+  },
+};
