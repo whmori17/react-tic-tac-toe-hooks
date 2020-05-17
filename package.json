@@ -14,8 +14,8 @@
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "format": "prettier --config ./.prettierrc.js --write \"./src/**/**/**/*.ts\" \"./src/**/**/**/*.tsx\"",
-    "format:check": "prettier --check \"./src/**/**/**/*.ts\" \"./src/**/**/**/*.tsx\""
+    "format": "prettier --config ./.prettierrc.js --write \"./src/**/**.ts\" \"./src/**/**/*.tsx\"",
+    "format:check": "prettier --check \"./src/**/**/*.ts\" \"./src/**/**/*.tsx\""
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
