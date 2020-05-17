@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameInfo renders with correct moves 1`] = `
+<div
+  className="game-info"
+>
+  <div>
+    Go to move #1
+  </div>
+  <ol>
+    <p
+      key="key"
+    />
+  </ol>
+</div>
+`;
+
+exports[`GameInfo renders with correct status 1`] = `
+<div
+  className="game-info"
+>
+  <div>
+    Go to move #1
+  </div>
+  <ol>
+    <p
+      key="key"
+    />
+  </ol>
+</div>
+`;
