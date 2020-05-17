@@ -1,6 +1,5 @@
 import React from 'react';
-import { Square } from '../Square/Square';
-import { Move } from '../Game/Game';
+import { Move, Square } from '..';
 
 export interface BoardProps {
   squares: Move;

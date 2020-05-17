@@ -1,7 +1,6 @@
 import React from 'react';
-import { Board } from '../Board/Board';
-import { GameMove, GameMoveProps } from '../GameMove/GameMove';
 import { GameDirector } from '@services/GameDirector';
+import { GameMoveProps, GameMove, Board } from '..';
 
 export type Move = string[];
 export interface BoardSquares {
