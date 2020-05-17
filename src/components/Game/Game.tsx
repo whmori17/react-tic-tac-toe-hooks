@@ -59,14 +59,14 @@ export const Game: React.FC = () => {
     });
   };
 
-  const history = state.history;
+  const { history } = state;
   const currentMove = history[state.stepNumber];
   const winner = GameDirector.calculateWinner(currentMove.squares);
+  const status = winner ? 'Winner is: ' + winner : 'Next player: ' + (state.xIsNext ? 'X' : 'O');
   const moves = history.map((move, step) => {
     const props: GameMoveProps = { step: step, onClick: step => jumpTo(step) };
     return <GameMove {...props} key={step} />;
   });
-  const status = winner ? 'Winner is: ' + winner : 'Next player: ' + (state.xIsNext ? 'X' : 'O');
 
   return (
     <div className="game">
