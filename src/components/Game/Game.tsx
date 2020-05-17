@@ -41,7 +41,7 @@ export const Game: React.FC = () => {
 
   return (
     <div className="game">
-      <Board squares={move} onClick={(i: number) => handleClick(i)} />
+      <Board squares={move} onClick={(position: number) => handleClick(position)} />
       <GameInfo {...{ status, moves }} />
     </div>
   );

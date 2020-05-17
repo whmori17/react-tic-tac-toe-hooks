@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface GameMoveProps {
   step: number;
-  onClick: (move: number) => void;
+  onClick: (step: number) => void;
 }
 
 export const GameMove: React.FC<GameMoveProps> = ({ step, onClick }) => {

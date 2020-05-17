@@ -4,7 +4,7 @@ import { Move } from '@customTypes/Move';
 
 export interface BoardProps {
   squares: Move;
-  onClick: (i: number) => void;
+  onClick: (position: number) => void;
 }
 
 export const Board: React.FC<BoardProps> = ({ squares, onClick }) => {
@@ -18,8 +18,8 @@ export const Board: React.FC<BoardProps> = ({ squares, onClick }) => {
     <div className="game-board">
       {boardRows.map((row, index) => (
         <div className="board-row" key={index}>
-          {row.map(i => (
-            <Square value={squares[i]} onClick={() => onClick(i)} key={i} />
+          {row.map(position => (
+            <Square value={squares[position]} onClick={() => onClick(position)} key={position} />
           ))}
         </div>
       ))}
