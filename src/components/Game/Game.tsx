@@ -25,11 +25,9 @@ export const Game: React.FC = () => {
 
     squares[i] = xIsNext ? 'X' : 'O';
 
-    setHistory(prevHistory => {
-      return [...prevHistory, squares];
-    });
     setXIsNext(!xIsNext);
     setStepNumber(history.length);
+    setHistory(prevHistory => [...prevHistory, squares]);
   };
 
   const move = history[stepNumber];
