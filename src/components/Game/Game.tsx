@@ -46,7 +46,7 @@ export const Game: React.FC = () => {
     });
     setState({
       xIsNext: !state.xIsNext,
-      stepNumber: currentHistory.length,
+      stepNumber: history.length,
     });
   };
 
