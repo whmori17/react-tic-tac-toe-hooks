@@ -5,7 +5,7 @@ export default {
   title: 'Square',
 };
 
-const onClick = (i: number) => console.log(i);
+const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => console.log(e);
 
 export const emptySquare = () => <Square value={''} {...{ onClick }} />;
 export const xSquare = () => <Square value={'X'} {...{ onClick }} />;

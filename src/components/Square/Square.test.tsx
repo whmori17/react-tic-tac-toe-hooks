@@ -6,7 +6,7 @@ describe('Square', () => {
   it('renders', () => {
     const squareProps: SquareProps = {
       value: 'X',
-      onClick: (i: number) => console.log(i),
+      onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => console.log(e),
     };
     const wrapper = shallow(<Square {...squareProps} />);
 

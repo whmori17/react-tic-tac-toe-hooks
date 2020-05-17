@@ -3,6 +3,7 @@
 exports[`Square renders 1`] = `
 <button
   className="square"
+  onClick={[Function]}
 >
   X
 </button>
