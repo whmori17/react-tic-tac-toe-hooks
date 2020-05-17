@@ -5,7 +5,6 @@ export interface SquareProps {
   value: string;
 }
 
-// Function components style
 export const Square: React.FC<SquareProps> = ({ value, onClick }) => {
   return (
     <button className={'square'} {...onClick}>
