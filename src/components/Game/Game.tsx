@@ -8,21 +8,20 @@ export interface BoardSquares {
   squares: Move;
 }
 export interface GameState {
-  history: BoardSquares[];
   xIsNext: boolean;
   stepNumber: number;
 }
 
 export const Game: React.FC = () => {
   const [state, setState] = useState<GameState>({
-    history: [
-      {
-        squares: Array(9).fill(null),
-      },
-    ],
     xIsNext: true,
     stepNumber: 0,
   });
+  const [history, setHistory] = useState<BoardSquares[]>([
+    {
+      squares: Array(9).fill(null),
+    },
+  ]);
 
   const jumpTo = (step: number): void => {
     setState(prevState => {
@@ -35,8 +34,8 @@ export const Game: React.FC = () => {
   };
 
   const handleClick = (i: number): void => {
-    const history = state.history.slice(0, state.stepNumber + 1);
-    const currentMove = history[history.length - 1];
+    const currentHistory = history.slice(0, state.stepNumber + 1);
+    const currentMove = currentHistory[currentHistory.length - 1];
     const squares = currentMove.squares.slice();
 
     if (GameDirector.calculateWinner(squares) || squares[i]) {
@@ -45,21 +44,18 @@ export const Game: React.FC = () => {
 
     squares[i] = state.xIsNext ? 'X' : 'O';
 
+    setHistory(prevHistory => {
+      return [...prevHistory, { squares }];
+    });
     setState(prevState => {
       return {
         ...prevState,
-        history: history.concat([
-          {
-            squares: squares,
-          },
-        ]),
         xIsNext: !state.xIsNext,
-        stepNumber: history.length,
+        stepNumber: currentHistory.length,
       };
     });
   };
 
-  const { history } = state;
   const currentMove = history[state.stepNumber];
   const winner = GameDirector.calculateWinner(currentMove.squares);
   const status = winner ? 'Winner is: ' + winner : 'Next player: ' + (state.xIsNext ? 'X' : 'O');
