@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board renders 1`] = `
+<div>
+  <div
+    className="board-row"
+  >
+    <Component
+      key="0"
+      onClick={[Function]}
+      value=""
+    />
+    <Component
+      key="1"
+      onClick={[Function]}
+      value=""
+    />
+    <Component
+      key="2"
+      onClick={[Function]}
+      value=""
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <Component
+      key="3"
+      onClick={[Function]}
+    />
+    <Component
+      key="4"
+      onClick={[Function]}
+    />
+    <Component
+      key="5"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <Component
+      key="6"
+      onClick={[Function]}
+    />
+    <Component
+      key="7"
+      onClick={[Function]}
+    />
+    <Component
+      key="8"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
