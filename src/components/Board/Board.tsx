@@ -17,7 +17,7 @@ export const Board: React.FC<BoardProps> = ({ squares, onClick }) => {
   const thirdRow = [6, 7, 8];
 
   return (
-    <div>
+    <div className="game-board">
       <div className="board-row">{firstRow.map(i => renderSquare(i))}</div>
       <div className="board-row">{secondRow.map(i => renderSquare(i))}</div>
       <div className="board-row">{thirdRow.map(i => renderSquare(i))}</div>
