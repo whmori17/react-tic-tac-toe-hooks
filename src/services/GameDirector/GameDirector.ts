@@ -1,7 +1,8 @@
+import { WinningCombinations } from '@customTypes/WinningCombination';
 import { Moves, isMove } from '@customTypes/Move';
 
 export class GameDirector {
-  private static readonly WINNING_COMBINATIONS = [
+  private static readonly WINNING_COMBINATIONS: WinningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
