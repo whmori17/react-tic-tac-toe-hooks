@@ -1,3 +1,12 @@
+# React Tic Tac Toe Hooks
+
+<img src="./badges/badge-statements.svg"/>
+<img src="./badges/badge-branches.svg"/>
+<img src="./badges/badge-functions.svg"/>
+<img src="./badges/badge-lines.svg"/>
+
+## Introduction
+
 This project refers to React tic-tac-toe tutorial switched to tsx with functional component using hooks. <br>
 It was NOT bootstrapped with [Create React App](https://github.com/facebook/create-react-app) because I prefer know "what I am doing" so I've reconfigured the project to work with webpack.
 

@@ -28,4 +28,5 @@ module.exports = {
     '^@domain(.*)$': '<rootDir>/src/components/domain$1',
     '\\.(css|less)$': '<rootDir>/public/css/__mocks__/styleMock.ts',
   },
+  coverageReporters: ['text-summary'],
 };

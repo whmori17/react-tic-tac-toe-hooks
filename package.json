@@ -2,20 +2,23 @@
   "name": "tic-tac-toe-hooks",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typescript": "^3.6.2"
-  },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "rm -rf dist/ && webpack && cp -R public dist/public",
-    "test": "jest --coverage",
+    "test": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:badges": "yarn test:coverage --config='./jest.config.badges.js' && jest-coverage-badges output './badges'",
+    "test:html": "yarn test:coverage --config='./jest.config.html.js'",
     "storybook": "start-storybook -p 9010",
     "build-storybook": "build-storybook",
     "format": "prettier --config ./.prettierrc.js --write \"./src/**/**.ts\" \"./src/**/**/*.tsx\"",
     "format:check": "prettier --check \"./src/**/**/*.ts\" \"./src/**/**/*.tsx\""
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "typescript": "^3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -55,6 +58,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "html-webpack-plugin": "^4.0.4",
     "jest": "^25.3.0",
+    "jest-coverage-badges": "^1.1.2",
     "prettier": "^1.19.1",
     "react-docgen-typescript-loader": "^3.3.0",
     "react-test-renderer": "^16.13.1",
