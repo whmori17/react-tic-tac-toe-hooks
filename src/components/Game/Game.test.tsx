@@ -37,4 +37,21 @@ describe('Game', () => {
     expect(boardProps2.squares[2]).toBe('O');
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should set X as firsat move adn O as second', () => {
+    const wrapper = shallow(<Game />);
+
+    wrapper.find('Board').simulate('click', 3);
+
+    const boardProps = (wrapper.find('Board').props() as unknown) as BoardProps;
+
+    expect(boardProps.squares[3]).toBe('X');
+
+    wrapper.find('Board').simulate('click', 2);
+
+    const boardProps2 = (wrapper.find('Board').props() as unknown) as BoardProps;
+
+    expect(boardProps2.squares[2]).toBe('O');
+    expect(wrapper).toMatchSnapshot();
+  });
 });
