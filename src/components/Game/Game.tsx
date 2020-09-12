@@ -4,10 +4,14 @@ import { GameMoveProps, GameMove, Board } from '..';
 import { Move, Moves } from '@customTypes/Move';
 import { GameInfo } from '@components/GameInfo';
 
-export const Game: React.FC = () => {
+export interface GameProps {
+  history?: Moves[];
+}
+
+export const Game: React.FC<GameProps> = ({ history: initialHistory = [Array<Move>(9).fill('')] }) => {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
-  const [history, setHistory] = useState<Moves[]>([Array<Move>(9).fill('')]);
+  const [history, setHistory] = useState<Moves[]>(initialHistory);
 
   const jumpTo = (step: number): void => {
     setStepNumber(step);
@@ -16,6 +20,7 @@ export const Game: React.FC = () => {
   };
 
   const handleClick = (i: number): void => {
+    console.log(i);
     const currentHistory = history.slice(0, stepNumber + 1);
     const moves = currentHistory[currentHistory.length - 1];
     const squares = moves.slice();
@@ -31,6 +36,10 @@ export const Game: React.FC = () => {
     setHistory(prevHistory => [...prevHistory, squares]);
   };
 
+  /**
+   * TODO: gestire meglio le var sottostanti, winner in particolare legge move troppo presto
+   * rispetto all'aggiornamento dello stato, dopo la gestione di handleClick
+   */
   const move = history[stepNumber];
   const winner = GameDirector.calculateWinner(move);
   const status = winner ? 'Winner is: ' + winner : 'Next player: ' + (xIsNext ? 'X' : 'O');
@@ -47,3 +56,5 @@ export const Game: React.FC = () => {
     </div>
   );
 };
+
+Game.displayName = 'Game';
