@@ -44,10 +44,19 @@ describe('WinningCombination', () => {
 });
 
 describe('WinningCombinationNumber', () => {
-  it('should be valid WinningCombinationNumber', () => {
-    const testValues: WinningCombinationNumber = 0;
-
-    expect(isWinningCombinationNumber(testValues)).toBe(true);
+  test.each`
+    value
+    ${0}
+    ${1}
+    ${2}
+    ${3}
+    ${4}
+    ${5}
+    ${6}
+    ${7}
+    ${8}
+  `('should be valid WinningCombinationNumber', ({ value }) => {
+    expect(isWinningCombinationNumber(value)).toBe(true);
   });
 
   it('should not be valid WinningCombinationNumber', () => {
