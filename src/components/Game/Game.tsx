@@ -36,6 +36,7 @@ export const Game: React.FC = () => {
   const status = winner ? 'Winner is: ' + winner : 'Next player: ' + (xIsNext ? 'X' : 'O');
   const moves = history.map((move, step) => {
     const props: GameMoveProps = { step, onClick: step => jumpTo(step) };
+
     return <GameMove {...props} key={step} />;
   });
 

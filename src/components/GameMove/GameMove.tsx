@@ -7,6 +7,7 @@ export interface GameMoveProps {
 
 export const GameMove: React.FC<GameMoveProps> = ({ step, onClick }) => {
   const desc = step ? 'Go to move #' + step : 'Go to game start';
+
   return (
     <li key={step}>
       <button onClick={() => onClick(step)}>{desc}</button>
