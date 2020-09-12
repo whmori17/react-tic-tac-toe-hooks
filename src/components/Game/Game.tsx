@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { GameDirector } from '@services/GameDirector';
 import { GameMoveProps, GameMove, Board } from '..';
-import { Move } from '@customTypes/Move';
+import { Move, Moves } from '@customTypes/Move';
 import { GameInfo } from '@components/GameInfo';
 
 export const Game: React.FC = () => {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
-  const [history, setHistory] = useState<Move[]>([Array(9).fill('')]);
+  const [history, setHistory] = useState<Moves[]>([Array<Move>(9).fill('')]);
 
   const jumpTo = (step: number): void => {
     setStepNumber(step);

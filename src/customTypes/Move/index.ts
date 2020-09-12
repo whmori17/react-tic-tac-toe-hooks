@@ -1,1 +1,1 @@
-export { Move } from './Move';
+export { Moves, Move, isMove } from './Move';

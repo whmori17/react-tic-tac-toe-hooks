@@ -1,9 +1,9 @@
 import React from 'react';
 import { Square } from '..';
-import { Move } from '@customTypes/Move';
+import { Moves } from '@customTypes/Move';
 
 export interface BoardProps {
-  squares: Move;
+  squares: Moves;
   onClick: (position: number) => void;
 }
 
