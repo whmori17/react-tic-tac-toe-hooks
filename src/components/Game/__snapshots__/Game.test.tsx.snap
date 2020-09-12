@@ -21,15 +21,8 @@ exports[`Game should render 1`] = `
     }
   />
   <Component
-    moves={
-      Array [
-        <Unknown
-          onClick={[Function]}
-          step={0}
-        />,
-      ]
-    }
-    status="Next player: X"
+    moves={Array []}
+    status=""
   />
 </div>
 `;

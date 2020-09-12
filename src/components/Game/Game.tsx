@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GameDirector } from '@services/GameDirector';
 import { GameMoveProps, GameMove, Board } from '..';
 import { Move, Moves } from '@customTypes/Move';
@@ -12,6 +12,8 @@ export const Game: React.FC<GameProps> = ({ history: initialHistory = [Array<Mov
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
   const [history, setHistory] = useState<Moves[]>(initialHistory);
+  const [moves, setMoves] = useState<JSX.Element[]>([]);
+  const [status, setStatus] = useState('');
 
   const jumpTo = (step: number): void => {
     setStepNumber(step);
@@ -20,7 +22,6 @@ export const Game: React.FC<GameProps> = ({ history: initialHistory = [Array<Mov
   };
 
   const handleClick = (i: number): void => {
-    console.log(i);
     const currentHistory = history.slice(0, stepNumber + 1);
     const moves = currentHistory[currentHistory.length - 1];
     const squares = moves.slice();
@@ -40,18 +41,21 @@ export const Game: React.FC<GameProps> = ({ history: initialHistory = [Array<Mov
    * TODO: gestire meglio le var sottostanti, winner in particolare legge move troppo presto
    * rispetto all'aggiornamento dello stato, dopo la gestione di handleClick
    */
-  const move = history[stepNumber];
-  const winner = GameDirector.calculateWinner(move);
-  const status = winner ? 'Winner is: ' + winner : 'Next player: ' + (xIsNext ? 'X' : 'O');
-  const moves = history.map((move, step) => {
-    const props: GameMoveProps = { step, onClick: step => jumpTo(step) };
+  useEffect(() => {
+    const winner = GameDirector.calculateWinner(history[stepNumber]);
+    setStatus(winner ? 'Winner is: ' + winner : 'Next player: ' + (xIsNext ? 'X' : 'O'));
+    setMoves(
+      history.map((move, step) => {
+        const props: GameMoveProps = { step, onClick: step => jumpTo(step) };
 
-    return <GameMove {...props} key={step} />;
-  });
+        return <GameMove {...props} key={step} />;
+      }),
+    );
+  }, [xIsNext, stepNumber, history]);
 
   return (
     <div className="game">
-      <Board squares={move} onClick={(position: number) => handleClick(position)} />
+      <Board squares={history[stepNumber]} onClick={(position: number) => handleClick(position)} />
       <GameInfo {...{ status, moves }} />
     </div>
   );
