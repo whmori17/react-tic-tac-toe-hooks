@@ -13,3 +13,5 @@ export const GameInfo: React.FC<GameInfoProps> = ({ status, moves }) => {
     </div>
   );
 };
+
+GameInfo.displayName = 'GameInfo';
