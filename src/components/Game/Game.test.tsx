@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Game, GameProps } from './Game';
-import { Move } from '@customTypes/Move';
+import { Game } from './Game';
+import { BoardProps } from '@components/Board/Board';
 
 describe('Game', () => {
   it('should render', () => {
@@ -11,13 +11,13 @@ describe('Game', () => {
   });
 
   it('should set X on clicked move', () => {
-    const wrapper = shallow(<Game history={[Array<Move>(9).fill('')]} />);
+    const wrapper = shallow(<Game />);
 
     wrapper.find('Board').simulate('click', 3);
 
-    const gameProps = (wrapper.props() as unknown) as Required<GameProps>;
+    const boardProps = (wrapper.find('Board').props() as unknown) as BoardProps;
 
-    expect(gameProps.history[0][3]).toBe('X');
+    expect(boardProps.squares[3]).toBe('X');
     expect(wrapper).toMatchSnapshot();
   });
 });

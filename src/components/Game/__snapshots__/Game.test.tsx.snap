@@ -26,3 +26,30 @@ exports[`Game should render 1`] = `
   />
 </div>
 `;
+
+exports[`Game should set X on clicked move 1`] = `
+<div
+  className="game"
+>
+  <Board
+    onClick={[Function]}
+    squares={
+      Array [
+        "",
+        "",
+        "",
+        "X",
+        "",
+        "",
+        "",
+        "",
+        "",
+      ]
+    }
+  />
+  <Component
+    moves={Array []}
+    status=""
+  />
+</div>
+`;
