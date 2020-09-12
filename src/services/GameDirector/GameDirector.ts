@@ -14,19 +14,17 @@ export class GameDirector {
 
   public static calculateWinner(squares: Moves): string | null {
     for (let i = 0; i < GameDirector.WINNING_COMBINATIONS.length; i++) {
-      const [a, b, c] = GameDirector.WINNING_COMBINATIONS[i];
+      const combination = GameDirector.WINNING_COMBINATIONS[i];
 
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
+      if (GameDirector.squaresInCombinationAreIdentical(squares, combination)) {
+        return squares[combination[0]];
       }
     }
 
     return null;
   }
 
-  public squaresInCombinationAreIdentical(squares: Moves, combinationIndex: number): boolean {
-    const [a, b, c] = GameDirector.WINNING_COMBINATIONS[combinationIndex];
-
+  public static squaresInCombinationAreIdentical(squares: Moves, [a, b, c]: number[]): boolean {
     return isMove(squares[a]) && squares[a] === squares[b] && squares[a] === squares[c];
   }
 }
