@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game renders 1`] = `
+<div
+  className="game"
+>
+  <Component
+    onClick={[Function]}
+    squares={
+      Array [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+      ]
+    }
+  />
+  <Component
+    moves={
+      Array [
+        <Unknown
+          onClick={[Function]}
+          step={0}
+        />,
+      ]
+    }
+    status="Next player: X"
+  />
+</div>
+`;
