@@ -12,3 +12,5 @@ export const Square: React.FC<SquareProps> = ({ value, onClick }) => {
     </button>
   );
 };
+
+Square.displayName = 'Square';

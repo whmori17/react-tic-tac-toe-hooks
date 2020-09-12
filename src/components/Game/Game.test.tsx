@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { Game } from './Game';
 
 describe('Game', () => {
@@ -9,10 +9,10 @@ describe('Game', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render', () => {
-    const wrapper = shallow(<Game />);
+  it('should render clicked move', () => {
+    const wrapper = mount(<Game />);
 
-    wrapper.simulate('click', 0);
+    wrapper.find('Board').simulate('click', 0);
 
     expect(wrapper).toMatchSnapshot();
   });

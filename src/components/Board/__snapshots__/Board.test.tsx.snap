@@ -8,17 +8,17 @@ exports[`Board renders 1`] = `
     className="board-row"
     key="0"
   >
-    <Component
+    <Square
       key="0"
       onClick={[Function]}
       value=""
     />
-    <Component
+    <Square
       key="1"
       onClick={[Function]}
       value=""
     />
-    <Component
+    <Square
       key="2"
       onClick={[Function]}
       value=""
@@ -28,15 +28,15 @@ exports[`Board renders 1`] = `
     className="board-row"
     key="1"
   >
-    <Component
+    <Square
       key="3"
       onClick={[Function]}
     />
-    <Component
+    <Square
       key="4"
       onClick={[Function]}
     />
-    <Component
+    <Square
       key="5"
       onClick={[Function]}
     />
@@ -45,15 +45,15 @@ exports[`Board renders 1`] = `
     className="board-row"
     key="2"
   >
-    <Component
+    <Square
       key="6"
       onClick={[Function]}
     />
-    <Component
+    <Square
       key="7"
       onClick={[Function]}
     />
-    <Component
+    <Square
       key="8"
       onClick={[Function]}
     />

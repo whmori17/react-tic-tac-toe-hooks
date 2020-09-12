@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Game renders 1`] = `
+exports[`Game should render 1`] = `
 <div
   className="game"
 >
-  <Component
+  <Board
     onClick={[Function]}
     squares={
       Array [
@@ -32,4 +32,175 @@ exports[`Game renders 1`] = `
     status="Next player: X"
   />
 </div>
+`;
+
+exports[`Game should render clicked move 1`] = `
+<Component>
+  <div
+    className="game"
+  >
+    <Board
+      onClick={[Function]}
+      squares={
+        Array [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+        ]
+      }
+    >
+      <div
+        className="game-board"
+      >
+        <div
+          className="board-row"
+          key="0"
+        >
+          <Square
+            key="0"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+          <Square
+            key="1"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+          <Square
+            key="2"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+        </div>
+        <div
+          className="board-row"
+          key="1"
+        >
+          <Square
+            key="3"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+          <Square
+            key="4"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+          <Square
+            key="5"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+        </div>
+        <div
+          className="board-row"
+          key="2"
+        >
+          <Square
+            key="6"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+          <Square
+            key="7"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+          <Square
+            key="8"
+            onClick={[Function]}
+            value=""
+          >
+            <button
+              className="square"
+              onClick={[Function]}
+            />
+          </Square>
+        </div>
+      </div>
+    </Board>
+    <Component
+      moves={
+        Array [
+          <Unknown
+            onClick={[Function]}
+            step={0}
+          />,
+        ]
+      }
+      status="Next player: X"
+    >
+      <div
+        className="game-info"
+      >
+        <div>
+          Next player: X
+        </div>
+        <ol>
+          <Component
+            key="0"
+            onClick={[Function]}
+            step={0}
+          >
+            <li
+              key="0"
+            >
+              <button
+                onClick={[Function]}
+              >
+                Go to game start
+              </button>
+            </li>
+          </Component>
+        </ol>
+      </div>
+    </Component>
+  </div>
+</Component>
 `;

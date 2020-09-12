@@ -26,3 +26,5 @@ export const Board: React.FC<BoardProps> = ({ squares, onClick }) => {
     </div>
   );
 };
+
+Board.displayName = 'Board';
