@@ -20,7 +20,7 @@ exports[`Game should render 1`] = `
       ]
     }
   />
-  <Component
+  <GameInfo
     moves={Array []}
     status=""
   />
@@ -47,7 +47,34 @@ exports[`Game should set X as firsat move adn O as second 1`] = `
       ]
     }
   />
-  <Component
+  <GameInfo
+    moves={Array []}
+    status=""
+  />
+</div>
+`;
+
+exports[`Game should set X as firsat move adn O as second 2`] = `
+<div
+  className="game"
+>
+  <Board
+    onClick={[Function]}
+    squares={
+      Array [
+        "",
+        "",
+        "O",
+        "X",
+        "",
+        "",
+        "",
+        "",
+        "",
+      ]
+    }
+  />
+  <GameInfo
     moves={Array []}
     status=""
   />
@@ -74,7 +101,7 @@ exports[`Game should set X on clicked move 1`] = `
       ]
     }
   />
-  <Component
+  <GameInfo
     moves={Array []}
     status=""
   />
