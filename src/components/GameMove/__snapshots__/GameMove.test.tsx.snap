@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GameMove renders 1`] = `
+exports[`GameMove should render 1`] = `
 <li
   key="1"
 >
@@ -12,7 +12,7 @@ exports[`GameMove renders 1`] = `
 </li>
 `;
 
-exports[`GameMove renders with game start desc 1`] = `
+exports[`GameMove should render with game start desc 1`] = `
 <li
   key="0"
 >
@@ -24,7 +24,7 @@ exports[`GameMove renders with game start desc 1`] = `
 </li>
 `;
 
-exports[`GameMove renders with step desc 1`] = `
+exports[`GameMove should render with step desc 1`] = `
 <li
   key="1"
 >
@@ -32,6 +32,18 @@ exports[`GameMove renders with step desc 1`] = `
     onClick={[Function]}
   >
     Go to move #1
+  </button>
+</li>
+`;
+
+exports[`GameMove should trigger onClick when clicked 1`] = `
+<li
+  key="0"
+>
+  <button
+    onClick={[Function]}
+  >
+    Go to game start
   </button>
 </li>
 `;
