@@ -5,11 +5,11 @@ describe('useGame', () => {
   it('should returns GameState', () => {
     const { result } = renderHook(() => useGame());
 
-    expect(typeof result.current.handleClick).toBe('function');
-    expect(typeof result.current.history).toBe('object');
-    expect(typeof result.current.moves).toBe('object');
     expect(typeof result.current.status).toBe('string');
+    expect(typeof result.current.history).toBe('object');
     expect(typeof result.current.stepNumber).toBe('number');
+    expect(typeof result.current.jumpTo).toBe('function');
+    expect(typeof result.current.handleClick).toBe('function');
   });
 
   it('should increment step number on every new move', () => {

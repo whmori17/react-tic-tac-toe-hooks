@@ -2,14 +2,13 @@ import * as React from 'react';
 
 export interface GameInfoProps {
   status: string;
-  moves: React.ReactNode[];
 }
 
-export const GameInfo: React.FC<GameInfoProps> = ({ status, moves }) => {
+export const GameInfo: React.FC<GameInfoProps> = ({ status, children }) => {
   return (
     <div className="game-info">
       <div>{status}</div>
-      <ol>{moves}</ol>
+      <ol>{children}</ol>
     </div>
   );
 };

@@ -21,9 +21,14 @@ exports[`Game should render 1`] = `
     }
   />
   <GameInfo
-    moves={Array []}
     status=""
-  />
+  >
+    <Component
+      key="0"
+      onClick={[Function]}
+      step={0}
+    />
+  </GameInfo>
 </div>
 `;
 
@@ -48,9 +53,24 @@ exports[`Game should set X as firsat move adn O as second 1`] = `
     }
   />
   <GameInfo
-    moves={Array []}
     status=""
-  />
+  >
+    <Component
+      key="0"
+      onClick={[Function]}
+      step={0}
+    />
+    <Component
+      key="1"
+      onClick={[Function]}
+      step={1}
+    />
+    <Component
+      key="2"
+      onClick={[Function]}
+      step={2}
+    />
+  </GameInfo>
 </div>
 `;
 
@@ -75,9 +95,24 @@ exports[`Game should set X as firsat move adn O as second 2`] = `
     }
   />
   <GameInfo
-    moves={Array []}
     status=""
-  />
+  >
+    <Component
+      key="0"
+      onClick={[Function]}
+      step={0}
+    />
+    <Component
+      key="1"
+      onClick={[Function]}
+      step={1}
+    />
+    <Component
+      key="2"
+      onClick={[Function]}
+      step={2}
+    />
+  </GameInfo>
 </div>
 `;
 
@@ -102,8 +137,18 @@ exports[`Game should set X on clicked move 1`] = `
     }
   />
   <GameInfo
-    moves={Array []}
     status=""
-  />
+  >
+    <Component
+      key="0"
+      onClick={[Function]}
+      step={0}
+    />
+    <Component
+      key="1"
+      onClick={[Function]}
+      step={1}
+    />
+  </GameInfo>
 </div>
 `;
