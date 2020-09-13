@@ -2,7 +2,6 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Game } from './Game';
 import { BoardProps } from '@components/Board/Board';
-import { GameInfoProps } from '@components/GameInfo';
 
 describe('Game', () => {
   it('should render', () => {
@@ -53,25 +52,6 @@ describe('Game', () => {
     const boardProps2 = (wrapper.find('Board').props() as unknown) as BoardProps;
 
     expect(boardProps2.squares[2]).toBe('O');
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should win X', () => {
-    // TODO: spostare l'hook in un file singolo e testarlo con renderHook & act
-    const wrapper = shallow(<Game />);
-
-    wrapper.find('Board').simulate('click', 0);
-    wrapper.find('Board').simulate('click', 3);
-    wrapper.find('Board').simulate('click', 1);
-    wrapper.find('Board').simulate('click', 4);
-    wrapper.find('Board').simulate('click', 2);
-    wrapper.find('Board').simulate('click', 5);
-
-    wrapper.render();
-
-    const boardProps2 = (wrapper.find('GameInfo').props() as unknown) as GameInfoProps;
-
-    expect(boardProps2.status).toBe('Winner is: X');
     expect(wrapper).toMatchSnapshot();
   });
 });
