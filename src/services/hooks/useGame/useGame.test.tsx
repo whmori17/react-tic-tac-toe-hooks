@@ -49,4 +49,35 @@ describe('useGame', () => {
 
     expect(result.current.status).toBe(`Winner is: ${expectedWinner}`);
   });
+
+  test.each`
+    moves                 | step
+    ${[0, 3, 1, 4, 2]}    | ${0}
+    ${[0, 3, 1, 4, 2]}    | ${1}
+    ${[0, 3, 1, 4, 2]}    | ${2}
+    ${[0, 3, 1, 4, 2]}    | ${3}
+    ${[0, 3, 1, 4, 2]}    | ${4}
+    ${[0, 3, 1, 4, 2]}    | ${5}
+    ${[6, 0, 3, 1, 4, 2]} | ${0}
+    ${[6, 0, 3, 1, 4, 2]} | ${1}
+    ${[6, 0, 3, 1, 4, 2]} | ${2}
+    ${[6, 0, 3, 1, 4, 2]} | ${3}
+    ${[6, 0, 3, 1, 4, 2]} | ${4}
+    ${[6, 0, 3, 1, 4, 2]} | ${5}
+    ${[6, 0, 3, 1, 4, 2]} | ${6}
+  `('should jump to step $step', ({ moves, step }) => {
+    const { result } = renderHook(() => useGame());
+
+    moves.forEach((move: number) => {
+      act(() => {
+        result.current.handleClick(move);
+      });
+    });
+
+    act(() => {
+      result.current.jumpTo(step);
+    });
+
+    expect(result.current.stepNumber).toBe(step);
+  });
 });
